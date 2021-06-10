@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const userCtrl = require('../controllers/employe');
-const auth = require('../middleware/auth');
+const authMiddleware = require('../middleware/authMiddleware');
 
-router.post('/register',auth, userCtrl.register);
-router.get('/afficher' , userCtrl.afficher);
-router.get('/afficher/:employeId' ,auth, userCtrl.afficherone);
-router.put('/modifier/:employeId',auth ,userCtrl.modifier);
-router.delete('/supprimer/:employeId',auth ,userCtrl.supprimer);
+router.post('/', userCtrl.register);
+router.get('/',  userCtrl.afficher);
+router.get('/:employeId', userCtrl.afficherone);
+router.put('/:employeId', userCtrl.modifier);
+router.delete('/:employeId' , userCtrl.supprimer);
 
 
 module.exports = router;
