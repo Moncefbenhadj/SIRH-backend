@@ -13,6 +13,7 @@ exports.register = (req, res, next) => {
 
 
 exports.afficher = (req, res, next) => {
+    console.log("controller afficher")
     Employe.find()
         .then(employe => res.status(200).json(employe))
         .catch(error => res.status(400).json({ error }));
@@ -25,6 +26,7 @@ exports.afficherone = (req, res, next) => {
 };
 
 exports.modifier = (req, res, next) => {
+    console.log("objet a modifier",req.body)
   Employe.updateOne({ _id: req.params.employeId }, { ...req.body })
     .then(() => res.status(200).json({ message: 'Objet modifié !'}))
     .catch(error => res.status(400).json({ error }));
