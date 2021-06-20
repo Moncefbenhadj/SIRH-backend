@@ -5,6 +5,7 @@ const employe = require('./models/employe');
 const employeRoutes = require('./routes/employe');
 const userRoutes = require('./routes/user');
 const promotionRoutes = require('./routes/promotion');
+const congesRoutes = require('./routes/conges');
 
 
 const app= express(); 
@@ -27,7 +28,7 @@ app.use((req, res, next) => {
   app.use('/api/employe', employeRoutes);
   app.use('/api/user', userRoutes);
   app.use('/api/promotion', promotionRoutes);
-  
+  app.use('/api/conges', congesRoutes);
 
   
 module.exports=app ; 
