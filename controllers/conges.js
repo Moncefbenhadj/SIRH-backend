@@ -33,6 +33,7 @@ exports.modifier = (req, res, next) => {
 };
 
 exports.supprimer =(req, res, next) => {
+    console.log("Je suis dans controller supp")
     Conges.deleteOne({ _id: req.params.congesId })
       .then(() => res.status(200).json({ message: 'Objet supprimé !'}))
       .catch(error => res.status(400).json({ error }));

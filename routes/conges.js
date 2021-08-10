@@ -5,9 +5,9 @@ const authMiddleware = require('../middleware/authMiddleware');
 
 router.post('/', congesCtrl.register);
 router.get('/',  congesCtrl.afficher);
-//router.get('/:employeId', congesCtrl.afficherone);
-//router.put('/:employeId', congesCtrl.modifier);
-//router.delete('/:employeId' , congesCtrl.supprimer);
+//router.get('/', congesCtrl.afficherone);
+router.put('/:congesId', congesCtrl.modifier);
+router.delete('/:congesId' , congesCtrl.supprimer);
 
 
 module.exports = router;

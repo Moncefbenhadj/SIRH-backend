@@ -1,6 +1,6 @@
 const mongoose = require('mongoose'); 
 
-const promotionSchema = mongoose.Schema({
+const formationSchema = mongoose.Schema({
 dateeffet: { type: Date , required: true },
 observation: {type:String , require:true},
 document: { type: String, required: false },
@@ -13,4 +13,4 @@ created_at:{type: String, required: false},
 created_by:{type: String, required: false},
 });
 
-module.exports = mongoose.model('Promotion', promotionSchema);
+module.exports = mongoose.model('Formation', formationSchema);
